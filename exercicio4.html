@@ -12,8 +12,22 @@
         <br><label for="hoje">Data Final:</label>
         <input type="date" name="data_final" id="data_final">
     </form>
-
     <input type="button" value="Comparar" id="btn_comparar">
-    
+
+    <script>
+        function calculo(){
+        const inicio = document.getElementById("data_inicio").value
+        const outroInicio = new Date(inicio)
+        const final = document.getElementById("data_final").value
+        const outroFinal = new Date(final)
+        let milisegundos = outroFinal - outroInicio;
+        let dias = milisegundos/(1000*60*60*24)
+        alert(`Faltam ${dias} dias`)
+    }
+
+    const botao = document.getElementById("btn_comparar");
+    botao.addEventListener("click",calculo)
+
+    </script>
 </body>
 </html>
